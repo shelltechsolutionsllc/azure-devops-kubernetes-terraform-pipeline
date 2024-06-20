@@ -26,13 +26,13 @@ steps:
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'northeurope'
-    backendAzureRmStorageAccountName: 'storageacctstsllc01'
-    backendAzureRmContainerName: 'storageacctstsllc01container'
+    backendAzureRmStorageAccountName: 'storageacctstsllc02'
+    backendAzureRmContainerName: 'storageacctstsllc02container'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
 
-- task: TerraformCLI@2
-  inputs:
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'azure-resource-manager-service-connection'
-    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+#- task: TerraformCLI@2
+#  inputs:
+#    command: 'apply'
+#    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+#    environmentServiceName: 'azure-resource-manager-service-connection'
+#    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
